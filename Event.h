@@ -11,10 +11,11 @@ class Event {
 	Date dateOfEvent;
 	Hall hallOfEvent;
 	size_t current;
-	Ticket tiks[20];
+	Ticket tiks[200];
+	int soldTickets;
 
 public:
-	Event() { current = 0; }
+	Event() { current = 0; soldTickets = 0; }
 
 	Event(char* name, Date date, Hall hall) 
 	{
@@ -22,17 +23,18 @@ public:
 		dateOfEvent = date;
 		hallOfEvent = hall;
 		current = 0;
+		soldTickets = 0;
 	}
 
-	void showAll();
 	void setEvent(Date, Hall, char*);
 	Date getDate();
 	char* getEventName();
 	size_t getHallNumber();
 	void freeSeats();
 	Hall getHall();
-	void book(int, int);
-	void unbook(int, int);
-	void retrunTiks();
+	int getSoldTickets();
+	void booke(int, int);
+	void unbooke(int, int);
 	void buyTicket(int, int);
+	void retrunTiks();
 };
