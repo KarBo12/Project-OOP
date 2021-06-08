@@ -52,3 +52,43 @@ bool Date::operator==(const Date& other) {
         return 0;
     }
 }
+bool Date::operator>(const Date& other) {
+
+    if (year > other.year) {
+        return true;
+    }
+    else if (year == other.year) {
+
+        if (month > other.month) {
+            return true;
+        }
+        else if (month == other.month) {
+
+            if (day > other.day) {
+                return true;
+            }
+            else {
+                return false;
+            }
+
+        }
+        else {
+            return false;
+        }
+
+
+    }
+    else {
+        return false;
+    }
+
+}
+int Date::getDay() {
+    return day;
+}
+int Date::getMonth() {
+    return month;
+}
+int Date::getYear() {
+    return year;
+}
