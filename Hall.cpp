@@ -43,7 +43,7 @@ void Hall::checkFree() {
 		std::cout << '\n';
 	}
 }
-void Hall::unbook(int x, int y) {
+void Hall::unbookh(int x, int y) {
 
 	x--;
 	y--;
