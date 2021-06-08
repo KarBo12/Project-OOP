@@ -1,9 +1,4 @@
 #include"Event.h"
-void Event::showAll() {
-	std::cout << "\n";
-	dateOfEvent.showDate();
-	hallOfEvent.showNumber();
-}
 
 void Event::setEvent(Date d, Hall h, char* n) {
 
@@ -24,6 +19,14 @@ size_t Event::getHallNumber() {
 
   return hallOfEvent.getNum();
 }
+int Event::getSoldTickets() {
+	for (int i = 0; i < current; i++) {
+		if (tiks[i].checkBought()) {
+			soldTickets++;
+		}
+	}
+	return soldTickets;
+}
 void Event::freeSeats() {
 	std::cout << "Available seats for Event " << nameOfEvent << " on ";
 	dateOfEvent.showDate();
@@ -35,15 +38,15 @@ void Event::freeSeats() {
 Hall Event::getHall() {
 	return hallOfEvent;
 }
-void Event::book(int x, int y) {
+void Event::booke(int x, int y) {
 
 	hallOfEvent.reserveSeat(x, y);
 	tiks[current].reserveTicket(x, y);
 	current++;
 
 }
-void Event::unbook(int x, int y) {
-	hallOfEvent.unbook(x, y);
+void Event::unbooke(int x, int y) {
+	hallOfEvent.unbookh(x, y);
 }
 void Event::retrunTiks() {
 	int i = 0;
