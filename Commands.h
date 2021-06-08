@@ -5,19 +5,21 @@
 #include"Ticket.h"
 #include"Hall.h"
 #include"Date.h"
+#include<fstream>
 
 class Run {
 
-	Event events[20];
+	Event events[30];
 	Hall halls[5];
 	int numOfEvents;
+	std::ifstream myFile;
 
 public:
 
 	Run() {}
 	Run(Event* x, Hall* y) {
 
-		for (int i=0; i < 20; i++) {
+		for (int i=0; i < 30; i++) {
 
 			events[i] = x[i];
 		}
@@ -29,6 +31,7 @@ public:
 		numOfEvents = 0;
 
 	};
+
 	void run();
 	void addEvent(Date, char*, int);
 	void freeseats(Date, char*);
@@ -36,7 +39,9 @@ public:
 	void unbook(Date, char*, int, int);
 	void buy(Date, char*, int, int);
 	void bookings(Date, char*);
-
-
+	void report(Date, Date, int);
+	void Save(const char*);
+	void open(const char*);
+	void close(const char*);
 
 };
