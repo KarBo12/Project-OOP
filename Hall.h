@@ -25,9 +25,7 @@ public:
 	void setHall(size_t, size_t, size_t);
 	void reserveSeat(int, int);
 	void checkFree();
-	void unbook(int, int);
+	void unbookh(int, int);
 	void showNumber();
 	size_t getNum();
-	
-
 };
