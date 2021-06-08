@@ -16,5 +16,9 @@ public:
 	void setDate();
 	bool isValid();
 	void showDate();
+	int getDay();
+	int getMonth();
+	int getYear();
 	bool operator==(const Date&);
+	bool operator > (const Date&);
 };
